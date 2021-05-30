@@ -14509,18 +14509,17 @@ Unique values for OST_WEST_KZ are [&#39;W&#39; &#39;O&#39;]
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">encode_these_features</span><span class="o">=</span><span class="p">[]</span>
 <span class="n">encode_these_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;OST_WEST_KZ&#39;</span><span class="p">)</span>
 
-<span class="c1">#add the mixed</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">gen_pop_datatype_of_features</span><span class="p">[</span><span class="s1">&#39;mixed&#39;</span><span class="p">]:</span>
     <span class="n">encode_these_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
 
     <span class="n">multi_level_categorical</span>
-<span class="c1"># add categorical/multi-level features</span>
+
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">multi_level_categorical</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">remove_multilevel_cols</span><span class="p">:</span>
         <span class="n">encode_these_features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
     
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="n">encode_these_features</span><span class="p">:</span>
-    <span class="k">if</span>   <span class="n">i</span> <span class="o">==</span><span class="s1">&#39;PRAEGENDE_JUGENDJAHRE&#39;</span>    <span class="ow">or</span>  <span class="n">i</span> <span class="o">==</span><span class="s1">&#39;CAMEO_INTL_2015&#39;</span>   <span class="p">:</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">encode_these_features</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span><span class="s1">&#39;PRAEGENDE_JUGENDJAHRE&#39;</span> <span class="ow">or</span>  <span class="n">i</span> <span class="o">==</span><span class="s1">&#39;CAMEO_INTL_2015&#39;</span> <span class="p">:</span>
         <span class="n">encode_these_features</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 
@@ -14533,6 +14532,8 @@ Unique values for OST_WEST_KZ are [&#39;W&#39; &#39;O&#39;]
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Discussion-1.2.1:-Re-Encode-Categorical-Features">Discussion 1.2.1: Re-Encode Categorical Features<a class="anchor-link" href="#Discussion-1.2.1:-Re-Encode-Categorical-Features">&#182;</a></h4><p>(Double-click this cell and replace this text with your own text, reporting your findings and decisions regarding categorical features. Which ones did you keep, which did you drop, and what engineering steps did you perform?)</p>
+<p>First I added the mixed values
+Then I added the categorical/multi-level features</p>
 
 </div>
 </div>
@@ -15289,6 +15290,7 @@ I replaced all missing values with the most frequent value in that column using 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Discussion-2.2:-Perform-Dimensionality-Reduction">Discussion 2.2: Perform Dimensionality Reduction<a class="anchor-link" href="#Discussion-2.2:-Perform-Dimensionality-Reduction">&#182;</a></h3><p>(Double-click this cell and replace this text with your own text, reporting your findings and decisions regarding dimensionality reduction. How many principal components / transformed features are you retaining for the next step of the analysis?)</p>
+<p>30 components because it cuts features down by half</p>
 
 </div>
 </div>
